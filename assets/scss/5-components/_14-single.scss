@@ -1,0 +1,219 @@
+.section-title {
+	position: relative;
+}
+
+.single-page .entry-title,
+.archive .section-title,
+.single .section-title,
+.single .entry-title {
+	padding-bottom: 40px;
+	line-height: 1.2;
+}
+
+.single-page .entry-content {
+	width: 700px;
+}
+
+.single .entry-content {
+	width: 600px;
+}
+
+.single .section {
+	padding-bottom: 80px;
+}
+
+.single .section:last-of-type {
+	padding-bottom: 120px;
+}
+
+.page .site-main {
+	margin-bottom: 100px;
+}
+
+.entry-content--wide.entry-content {
+	width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+	.single-page .entry-content,
+	.single .entry-content {
+		width: auto;
+		float: none;
+	}
+}
+
+.single-projekt .trailer {
+	margin-bottom: 40px;
+}
+
+.single-projekt .section.entry-content {
+	width: 700px;
+	float: left;
+	text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+}
+
+.single-projekt .prizes {
+	float: right;
+}
+
+@media screen and (max-width: 1000px) {
+	.single-projekt .section.entry-content {
+		width: auto;
+	}
+}
+
+.presskit {
+	margin-bottom: 35px;
+}
+
+.presskit-link {
+	font-family: 'Futura-Bold';
+	font-size: 16px;
+	color: #FFFD00;
+	text-decoration: none;
+	display: block;
+	padding-left: 22px;
+	background: url("../../img/download-icon.png") no-repeat 0 6px;
+	position: relative;
+	z-index: 110;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.presskit .presskit-link,
+.presskit .presskit-link:visited {
+	color: #FFFD00;
+}
+
+.presskit .presskit-link:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.stills .presskit {
+	float: left;
+	width: 200px;
+	height: 115px;
+}
+
+.stills .presskit-link {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	line-height: 110px;
+	text-align: center;
+	background-position: 95px 75px;
+	padding-left: 0;
+}
+
+.people-list {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+
+	li {
+		display: block;
+		float: left;
+		padding: 0;
+		margin: 0 0 12px 0;
+		font-size: 14px;
+		line-height: 1.2;
+		font-family: 'Futura-Bold';
+		width: 100%;
+	}
+
+	.sep {
+		display: none;
+	}
+
+	.function {
+		color: #FFFD00;
+		padding-left: 20px;
+	}
+
+	a {
+		color: #fff;
+
+		&:hover {
+			color: #FFFD00;
+			text-decoration: none;
+		}
+	}
+}
+
+@media (min-width: 420px) {
+	.people-list li {
+		width: 400px;
+	}
+}
+
+.project-credits p {
+	font-family: 'Futura-Bold';
+	font-size: 14px;
+	margin-top: 10px;
+
+	strong {
+		color: #FFFD00;
+	}
+}
+
+.project__icons--vertical {
+	float: left;
+	padding-left: 24px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+@media (min-width: 520px) {
+	.project__icons--vertical {
+		width: 476px;
+	}
+}
+
+.project__icons--vertical .project__icon {
+	width: 50%;
+	padding: 12px;
+	box-sizing: border-box;
+	margin-bottom: 16px;
+}
+
+.project__icons--horizontal {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: 24px;
+}
+
+.project__icons--horizontal .project__icon {
+	padding: 12px 24px 12px 0;
+	box-sizing: border-box;
+}
+
+.project__icon-img {
+	display: block;
+}
+
+.project__links {
+	padding-top: 24px;
+	font-size: 25px;
+	font-family: 'Futura-Bold';
+
+	a {
+		display: inline-block;
+		text-decoration: none;
+		margin-right: 48px;
+		color: #fff;
+
+		&:visited {
+			color: #fff;
+		}
+
+		&:focus,
+		&:hover {
+			color: #FFFD00;
+		}
+	}
+}

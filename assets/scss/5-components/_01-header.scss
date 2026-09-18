@@ -5,9 +5,7 @@
 	width: 100%;
 	max-width: 100%;
 	z-index: 100;
-	// padding: 24px 0 0;
 	padding: 0;
-	// background-color: #000;
 	background-color: transparent;
 	transform: translate3d(0, 0, 0);
 	transition: transform $global-transistion-duration ease-out;
@@ -21,8 +19,6 @@
 		padding-block: 0.75rem;
 		box-sizing: border-box;
 		padding-inline: 0;
-		@include mq(mq-land) {
-		}
 	}
 
 	.logo {

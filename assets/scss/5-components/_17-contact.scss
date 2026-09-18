@@ -1,0 +1,93 @@
+.contact-columns .col {
+	width: 560px;
+	float: left;
+}
+
+.contact-columns a:visited,
+.contact-columns a {
+	color: #fff;
+}
+
+.contact-columns .col-2 {
+	float: right;
+	width: 500px;
+	padding-left: 60px;
+}
+
+.contact-columns div.alignright {
+	width: 255px;
+}
+
+.contact-card-address {
+	padding-top: 50px;
+	line-height: 1.7;
+}
+
+.contact-card {
+	position: relative;
+	margin-bottom: 30px;
+}
+
+.contact-card:not(.contact-card--company) p:last-of-type:after {
+	content: '';
+	display: block;
+	width: 70px;
+	height: 100%;
+	position: absolute;
+	right: 180px;
+	top: 0;
+	background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+@media screen and (max-width: 1240px) {
+	.contact-columns .col {
+		width: 480px;
+		float: left;
+	}
+
+	.contact-columns .col-2 {
+		float: right;
+		width: 440px;
+		padding-left: 40px;
+	}
+
+	.contact-card img {
+		width: 200px;
+		height: auto;
+	}
+
+	.contact-card p:last-of-type:after {
+		right: 130px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.contact-columns .col {
+		width: 100%;
+		float: none;
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 470px) {
+	.contact-card {
+		min-height: 132px;
+	}
+
+	.contact-card .alignleft {
+		position: relative;
+		z-index: 10;
+	}
+
+	.contact-card img {
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 0;
+	}
+
+	.contact-card p:last-of-type:after {
+		width: 130px;
+		right: 70px;
+	}
+}

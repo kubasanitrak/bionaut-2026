@@ -2,7 +2,11 @@
 @import '1-settings/vars';
 @import '1-tools/mixins';
 @import 'fonts';
-@import 'legacy';
+
+@import '2-generic/reset';
+@import '3-elements/base';
+@import '4-objects/layout';
+@import '4-objects/helpers';
 
 @import '5-components/01-header';
 @import '5-components/03.01-menu';
@@ -15,15 +19,14 @@
 @import '5-components/11-projects';
 @import '5-components/12-spark';
 @import '5-components/13-hp-mosaic';
-@import '5-components/00-css3-transforms';
+@import '5-components/14-single';
+@import '5-components/15-playlist';
+@import '5-components/16-media';
+@import '5-components/17-contact';
 
 @media (prefers-reduced-motion: reduce) {
 	* {
 		animation: none !important;
 		transition: none !important;
 	}
-}
-
-.taC {
-	text-align: center;
 }
