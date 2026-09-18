@@ -1,0 +1,88 @@
+.hamburger {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	// right: 0;
+	right: -0.75rem;
+	z-index: 3;
+	margin: 0;
+	padding: 0;
+	width: $ham-W;
+	height: $ham-H;
+	border: 0;
+	background: transparent;
+	color: #fff;
+	cursor: pointer;
+	appearance: none;
+	-webkit-appearance: none;
+	transform: translateY(-50%);
+
+	&:hover,
+	&:focus-visible {
+		color: var(--color-highlight);
+		outline: none;
+	}
+
+	@include mq(mq-land) {
+		display: none;
+	}
+}
+
+.hamburger__icon {
+	position: relative;
+	display: block;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background-color: currentColor;
+	transition: background-color 0s $global-transistion-duration;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		background-color: currentColor;
+		transition-duration: $global-transistion-duration, $global-transistion-duration;
+		transition-delay: $global-transistion-duration, 0s;
+	}
+
+	&::before {
+		top: -14px;
+		transition-property: top, transform, width, height, border-radius, left;
+	}
+
+	&::after {
+		bottom: -14px;
+		transition-property: bottom, transform, width, height, border-radius, left;
+	}
+}
+
+.site-header.is-open .hamburger__icon {
+	background-color: transparent;
+	transition-delay: 0s;
+
+	&::before,
+	&::after {
+		left: -8px;
+		width: 24px;
+		height: 2px;
+		border-radius: 0;
+		transition-delay: 0s, $global-transistion-duration;
+	}
+
+	&::before {
+		top: 3px;
+		transform: rotate(45deg);
+	}
+
+	&::after {
+		bottom: 3px;
+		transform: rotate(-45deg);
+	}
+}

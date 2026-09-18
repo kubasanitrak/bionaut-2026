@@ -1,0 +1,41 @@
+{
+    "key": "group_bio26_block_book",
+    "title": "Block: Book of Projects",
+    "fields": [
+        {
+            "key": "field_bio26_pdf_url",
+            "label": "PDF URL",
+            "name": "pdf_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https://bionaut.cz/wp-content/uploads/2024/02/Bionaut-book-v2024.pdf"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/bio-book"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1757613600
+}

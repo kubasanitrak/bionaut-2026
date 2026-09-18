@@ -1,0 +1,131 @@
+:root {
+	--pad-T: calc(44px + (28 - 44) * ((100vw - 320px) / (2560 - 320)));
+	--pad-R: calc(10px + (30 - 10) * ((100vw - 320px) / (2560 - 320)));
+	--fscreen-T: var(--pad-T);
+	--fscreen-R: var(--pad-R);
+
+	// --hmbrgr-T: calc(3px + (18 - 3) * ((100vw - 320px) / (2560 - 320)));
+
+	--touch-S: 28px;
+	--dsalpha-1: 0.0;
+	--dsalpha-2: 0.0;
+	--maW: 1440;
+
+	--logo-W: calc(52px + (56 - 52) * ((100vw - 320px) / (2560 - 320)));
+	--logo-H: calc(34px + (34 - 34) * ((100vw - 320px) / (2560 - 320)));
+	--header-H: calc(72px + (174 - 72) * ((100vw - 320px) / (2560 - 320)));
+	--dir-LR: 1;
+
+	--gap: calc(9px + (6 - 9) * ((100vw - 320px) / (2560 - 320)));
+	--gutter: calc(9px + (20 - 9) * ((100vw - 320px) / (2560 - 320)));
+
+	--logo-RATIO: 1.5;
+
+	--flow-space: 0.75em;
+
+	--modifier: calc((30rem - 100%) * 999);
+
+	--intro-mq-based-T: 0.65s;
+
+
+	// --menu-items: 16;
+	--btn-S: 25px;
+
+	--works-grid-ratio: 16 / 11;
+
+	// --gaps-NUM: 7;
+	// --cols-NUM: 8;
+	// --cols-NUM: calc(var(--gaps-NUM) + 1);
+
+	@media (pointer: coarse) {
+		--touch-S: 42px;
+		--btn-S: 32px;
+	}
+
+	--team-grid--item-H-fix: 10rem;
+
+}
+
+/* GLOBAL SIZES */
+// $touch-S: 40px;
+$touch-S: var(--touch-S);
+$sidebar-W: 127px;
+
+/* CSS TRANSITION VARS */
+// $cubic: cubic-bezier(.13,1.5,.61,1.7);
+$cubic: cubic-bezier(.55,.29,.17,.97);
+$cubic-2: cubic-bezier(.3,.27,0,.99);
+$global-transistion-duration: 0.65s;
+$dur: 0.45;
+$stagger: 0.15;
+$prlx-dist: 60px;
+$base-T: 0.65;
+
+/* GLOBAL FONT-SIZE */
+$fz-NAV: calc(19px + (19 - 19) * ((100vw - 320px) / (2560 - 320)));
+$fz-H1: calc(30px + (52 - 30) * ((100vw - 320px) / (2560 - 320)));
+$fz-H2: calc(20px + (30 - 20) * ((100vw - 320px) / (2560 - 320)));
+$fz-H3: calc(19px + (20 - 19) * ((100vw - 320px) / (2560 - 320)));
+$fz-H4: calc(15px + (17 - 15) * ((100vw - 320px) / (2560 - 320)));
+$fz-PLAIN: calc(15px + (17 - 15) * ((100vw - 320px) / (1920 - 320)));
+// $fz-H4: $fz-PLAIN;
+$fz-H5: $fz-PLAIN;
+$fz-H6: $fz-PLAIN;
+// $fz-MINOR: calc(11px + (12 - 11) * ((100vw - 320px) / (2560 - 320)));
+$fz-CONTACT: calc(13px + (14 - 13) * ((100vw - 320px) / (2560 - 320)));
+$fz-MINOR: $fz-CONTACT;
+
+/* GLOBAL PADDING */
+$pad-T: var(--pad-T);
+$pad-R: var(--pad-R);
+$pad-B: $pad-T;
+$pad-L: $pad-R;
+
+/* GLOBAL MARGIN */
+$mar-T: $pad-T;
+$mar-R: $pad-R;
+$mar-B: $pad-B;
+$mar-L: $pad-L;
+
+
+/* HEADER */
+$header-H: 84px;
+
+/* LOGO */
+$logo-W: 100px;
+$logo-H: $logo-W;
+$mar-logo-H: 320px;
+
+/* NAVIGATION */
+$nav-GAP: 1rem;
+$nav-mar-T: $header-H+16px;
+$nav-item-BOR_C: red;
+$nav-BGR: lime;
+
+/* NAVIGATION HAMBURGER MENU */
+$ham-W: 60px;
+$ham-H: 60px;
+$ham-BGR: var(--color-highlight);
+$ham-C: transparent;
+$ham-PAD: 16px;
+$ham-BAR_STROKE: 2px;
+$ham-BAR_SPACE: 5px;
+
+/* FORM SPECIFIC */
+$bor-RADIUS: 7px;
+
+
+$line-THICK: 1px;
+$plus-STROKE: 2px;
+$plus-SIZE: 20px;
+$border-size: calc(10px + (16 - 10) * ((100vw - 320px) / (2560 - 320)));
+$dot-SIZE: 9px;
+
+$img-border-W: calc(2px + (3 - 2) * ((100vw - 320px) / (2560 - 320)));
+
+$max-W: 1200px;
+$Break-P: calc(#{$max-W} + var(--pad-R)); //1080px
+$line-Lenght: 43rem;
+$p-max-W: 34em;
+
+$profile-img-W: 220px;

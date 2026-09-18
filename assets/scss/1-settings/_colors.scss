@@ -1,0 +1,32 @@
+:root, [data-theme="default"] {
+	--white: #FFFFFF;
+	--black: #000000;
+	--gray1: hsla(180, 2%, 88%, 1);
+	--gray2: hsla(0, 0%, 49%, 1);
+	--gray3: var(--gray1);
+	--gray4: var(--gray1);
+	--color-primary: var(--black);
+
+	--corp-c-1: var(--gray1);
+	--corp-c-2: var(--gray2);
+	/*
+	--corp-c-3: hsla(18, 83%, 53%, 1); // #EB5F23 oranžová
+	--corp-c-4: hsla(20, 81%, 35%, 1); // #A04011 světle oranžová
+	--corp-c-5: hsla(206, 71%, 10%, 1); // #0B2A41 tmavomodrá
+	*/
+	/* color contrasts */
+	--color-bg: var(--gray1);
+	--color-line: var(--gray2);
+	--menu-bg: var(--gray1);
+	--color-contrast-high: var(--gray2);
+	--color-labels: var(--gray2);
+	--color-highlight: #FFFD00;
+	
+}
+
+$white: #ffffff;
+$background: #ffffff;
+$hover: #eeee22;
+$body-C: var(--color-contrast-high);
+$body-BGR: var(--color-bg);
+$active-C: var(--color-highlight);

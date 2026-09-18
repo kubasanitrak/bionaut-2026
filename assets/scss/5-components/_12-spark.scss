@@ -1,0 +1,299 @@
+.page-spark {
+	.site-content {
+		position: relative;
+	}
+
+	.spark-container {
+		width: 33vw;
+		position: fixed;
+		z-index: 0;
+		opacity: 1;
+		top: 300px;
+		right: 20px;
+		pointer-events: none;
+	}
+
+	.svg-containter {
+		position: relative;
+		width: 100%;
+		display: block;
+
+		svg {
+			fill: #fff;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	.ff-futura,
+	.spark-h3,
+	.spark-h4,
+	.wp-block-heading.spark-h3,
+	.wp-block-heading.spark-h4 {
+		font-family: 'Futura-Bold', sans-serif;
+	}
+
+	.spark-h3,
+	.spark-h4,
+	.wp-block-heading.spark-h3,
+	.wp-block-heading.spark-h4 {
+		line-height: 1.3em;
+	}
+
+	.spark-h3,
+	.wp-block-heading.spark-h3 {
+		font-size: 25px;
+		margin-bottom: 45px;
+	}
+
+	.spark-h4,
+	.wp-block-heading.spark-h4 {
+		font-size: 18px;
+	}
+
+	.custom-list {
+		margin-left: 0;
+		padding-left: 0;
+
+		li {
+			margin-left: 1em;
+			padding-left: 0.5em;
+		}
+	}
+
+	.cta-container,
+	.wp-block-buttons {
+		margin-top: 40px;
+		overflow: hidden;
+	}
+
+	.cta-container .btn,
+	.wp-block-button .wp-block-button__link {
+		font-family: 'Futura-Bold', sans-serif;
+		font-size: 25px;
+		text-decoration: none;
+		padding-block: 0.5em 0.55em;
+		width: 100%;
+		max-width: 100%;
+		display: inline-block;
+		text-align: center;
+		line-height: 1em;
+		border-radius: 0;
+	}
+
+	.cta-container .btn.btn-fill,
+	.wp-block-button .wp-block-button__link {
+		background-color: #fff;
+		color: #000;
+		transition: background-color 250ms ease-out;
+	}
+
+	.cta-container .btn.btn-fill:hover,
+	.cta-container .btn.btn-fill:focus,
+	.wp-block-button .wp-block-button__link:hover,
+	.wp-block-button .wp-block-button__link:focus {
+		background-color: #fffd00;
+		color: #000;
+	}
+
+	.color-yellow,
+	a.color-yellow {
+		color: #fffd00;
+	}
+
+	a.color-yellow {
+		text-decoration: none;
+	}
+
+	a.color-yellow:hover,
+	a.color-yellow:focus {
+		text-decoration: underline;
+	}
+
+	.spark-plain {
+		line-height: 1.3em;
+	}
+}
+
+.spark {
+	--spark-color-from: #fffd00;
+	--spark-color-peak: #ffffff;
+	--spark-color-to: #ffffff;
+	--spark-opacity-from: 0;
+	--spark-opacity-peak: 1;
+	--spark-opacity-to: 0;
+	--spark-scale-from: 0.3;
+	--spark-scale-to: 1;
+	--spark-rotate-from: 0deg;
+	--spark-rotate-to: 0deg;
+	--spark-origin-x: 50%;
+	--spark-origin-y: 50%;
+	--spark-duration: 2.4s;
+	--spark-delay: 0s;
+	--spark-ease-ignite: cubic-bezier(0.12, 0.82, 0.28, 1);
+	--spark-ease-fade: cubic-bezier(0.45, 0.02, 0.28, 1);
+	--spark-glow-from: drop-shadow(0 0 0px transparent);
+	--spark-glow-peak: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 16px #fffd00);
+	--spark-glow-to: drop-shadow(0 0 0px transparent);
+
+	fill: currentColor;
+	color: var(--spark-color-from);
+	opacity: var(--spark-opacity-from);
+	filter: var(--spark-glow-from);
+	transform-box: fill-box;
+	transform-origin: var(--spark-origin-x) var(--spark-origin-y);
+	transform: scale(var(--spark-scale-from)) rotate(var(--spark-rotate-from));
+	animation: spark-flash calc(var(--spark-duration) * 0.5) var(--spark-delay) 5 both;
+	will-change: transform, opacity, color, filter;
+}
+
+.spark_1 {
+	--spark-duration: 2.65s;
+	--spark-delay: -0.45s;
+	--spark-origin-x: 46%;
+	--spark-origin-y: 54%;
+	--spark-rotate-from: -9deg;
+	--spark-rotate-to: 5deg;
+	--spark-ease-ignite: cubic-bezier(0.08, 0.9, 0.22, 1);
+	--spark-ease-fade: cubic-bezier(0.5, 0, 0.25, 1);
+	--spark-glow-peak: drop-shadow(0 0 6px #ffffff) drop-shadow(0 0 20px #fffd00);
+}
+
+.spark_2 {
+	--spark-duration: 1.85s;
+	--spark-delay: -1.15s;
+	--spark-origin-x: 58%;
+	--spark-origin-y: 38%;
+	--spark-rotate-from: 11deg;
+	--spark-rotate-to: -4deg;
+	--spark-ease-ignite: cubic-bezier(0.18, 0.75, 0.2, 1);
+	--spark-ease-fade: cubic-bezier(0.4, 0.05, 0.2, 1);
+	--spark-glow-peak: drop-shadow(0 0 4px #ffffff) drop-shadow(0 0 12px #fffd00);
+}
+
+.spark_3 {
+	--spark-duration: 3.15s;
+	--spark-delay: -0.2s;
+	--spark-origin-x: 62%;
+	--spark-origin-y: 47%;
+	--spark-rotate-from: -14deg;
+	--spark-rotate-to: 7deg;
+	--spark-ease-ignite: cubic-bezier(0.05, 0.95, 0.3, 1);
+	--spark-ease-fade: cubic-bezier(0.55, 0, 0.3, 1);
+	--spark-glow-peak: drop-shadow(0 0 5px #ffffff) drop-shadow(0 0 14px #fffd00);
+}
+
+.spark_4 {
+	--spark-duration: 2.2s;
+	--spark-delay: -1.7s;
+	--spark-origin-x: 39%;
+	--spark-origin-y: 63%;
+	--spark-rotate-from: 6deg;
+	--spark-rotate-to: -10deg;
+	--spark-ease-ignite: cubic-bezier(0.2, 0.7, 0.15, 1.05);
+	--spark-ease-fade: cubic-bezier(0.38, 0, 0.18, 1);
+	--spark-glow-peak: drop-shadow(0 0 7px #ffffff) drop-shadow(0 0 18px #fffd00);
+}
+
+.spark_5 {
+	--spark-duration: 2.9s;
+	--spark-delay: -0.85s;
+	--spark-origin-x: 44%;
+	--spark-origin-y: 41%;
+	--spark-rotate-from: -7deg;
+	--spark-rotate-to: 9deg;
+	--spark-ease-ignite: cubic-bezier(0.1, 0.88, 0.25, 1);
+	--spark-ease-fade: cubic-bezier(0.48, 0.04, 0.22, 1);
+	--spark-glow-peak: drop-shadow(0 0 4px #ffffff) drop-shadow(0 0 15px #fffd00);
+}
+
+@keyframes spark-flash {
+	0% {
+		opacity: var(--spark-opacity-from);
+		color: var(--spark-color-from);
+		filter: var(--spark-glow-from);
+		transform: scale(var(--spark-scale-from)) rotate(var(--spark-rotate-from));
+		animation-timing-function: var(--spark-ease-ignite);
+	}
+
+	38% {
+		opacity: var(--spark-opacity-peak);
+		color: var(--spark-color-peak);
+		filter: var(--spark-glow-peak);
+		animation-timing-function: var(--spark-ease-fade);
+	}
+
+	100% {
+		opacity: var(--spark-opacity-to);
+		color: var(--spark-color-to);
+		filter: var(--spark-glow-to);
+		transform: scale(var(--spark-scale-to)) rotate(var(--spark-rotate-to));
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.spark {
+		animation: none;
+		opacity: 1;
+		color: var(--spark-color-to);
+		filter: none;
+		transform: scale(var(--spark-scale-to));
+	}
+}
+
+@media screen and (orientation: landscape) {
+	.page-spark {
+		.cta-container .btn,
+		.wp-block-button .wp-block-button__link {
+			padding-inline: 2em;
+			max-width: 14ch;
+		}
+
+		.spark-container {
+			top: calc((100vh - 33vw) * 0.5);
+			right: 25px;
+			max-width: 35em;
+			opacity: 1;
+		}
+	}
+}
+
+@supports (--custom: property) {
+	[style*="--aspect-ratio"] {
+		position: relative;
+		padding-bottom: 0;
+	}
+
+	[style*="--aspect-ratio"]::before {
+		padding-bottom: calc(100% / (var(--aspect-ratio)));
+		display: block;
+		content: "";
+	}
+
+	[style*="--aspect-ratio"] > :first-child:not(.play-button) {
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.video-tut-label {
+	font-family: 'Futura-Bold', sans-serif;
+	margin-top: 1.5em;
+}
+
+.pdf-embed {
+	width: 100%;
+	height: 100dvh;
+	display: block;
+}
+
+.pdf-embed iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+}

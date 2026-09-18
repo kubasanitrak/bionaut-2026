@@ -1,0 +1,180 @@
+.footnav-list {
+	li {
+		// opacity: .6;
+		a {
+			transform: scale(1.0);
+			transform-origin: center;
+			will-change: transform;
+			transition:
+				// opacity #{$dur}s 0.0s ease-out;
+				transform #{$dur}s 0.0s ease-out;
+		}
+		&:hover {
+			// opacity: 1;
+			a {
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+.news-grid--item {
+	&_header {
+		background: rgba(0,0,0,.5);
+		will-change: background;
+		transition:
+			background #{$dur}s 0.0s ease-out;
+	}
+	&_title {
+		top: 50%;
+		transform: translateY(-50%);
+		transition:
+			transform calc(#{$dur}s * .35) calc(#{$dur}s * .5) ease-out,
+			top calc(#{$dur}s * .35) calc(#{$dur}s * .5) ease-out;
+	}
+	&:hover {
+		.news-grid--item_header {
+			background: rgba(0,0,0,.0);
+			justify-content: flex-end;
+		}
+		.news-grid--item_title {
+			top: 100%;
+			transform: translateY(-100%);
+			transition-delay: 0.0s, 0.0s;
+		}
+	}
+}
+.customcols-row {
+	.customcols-row--header .customcols-row--title {
+		color: var(--white);
+		transition:
+			color #{$dur}s 0.0s;
+	}
+	&:hover {
+		.customcols-row--header .customcols-row--title {
+			color: var(--color-highlight);
+		}
+	}
+}
+.customcols-col {
+	&--item {
+		&_img {
+			opacity: .9;
+			transition:
+				opacity #{$dur}s 0.0s ease-out;
+
+			&::after {
+				transform: scaleX(1);
+				transform-origin: center right;
+				transition:
+					transform #{$dur}s 0.0s ease-out;
+			}
+			&:hover {
+				&::after {
+					transform: scaleX(0);
+					// opacity: 0;
+				}
+			}
+		}
+		&_email {
+			&, * {
+				transition:
+					color #{$dur}s 0.0s;
+				&:hover {
+					color: var(--color-highlight);
+					text-decoration: underline;
+				}
+			}
+		}
+		&:hover {
+			.customcols-col--item_img {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+.project-overview {
+	max-height: 480px;
+	@include mq(mq-land) {
+		max-height: 350px;
+	}
+	transition:
+		max-height #{$base-T}s 0.0s ease-out;
+	.grid-item {
+		&:nth-child(n+6) {
+			opacity: 0;
+			transition: opacity #{$base-T}s 0.0s;
+		}
+	}
+	&.expanded {
+		max-height: 800vmax;
+		@include mq(mq-land) {
+			max-height: 200vmax;
+		}
+		.grid-item {
+			&:nth-child(n+6) {
+				opacity: 1;
+				transition-delay: #{$dur}s;
+			}
+		}
+		.project-overview--toggle {
+			transition-delay: #{$dur}s;
+			color: transparent;
+			&:hover {
+			}
+			&::before {
+				transform: translate(0, -50%) rotate(45deg);
+			}
+			&::after {
+				transform: translate(0, -50%) rotate(135deg);
+			}
+		}
+	}
+
+	.project-overview--header {
+		.category-title {
+			color: var(--white);
+			cursor: pointer;
+			transition:
+				color #{$dur}s 0.0s;
+		}
+	}
+	&:hover {
+		.project-overview--header {
+			.category-title {
+				color: var(--color-highlight);
+			}
+		}
+	}
+}
+
+.project-overview--toggle {
+	// color: transparent;
+	color: var(--white);
+	transition:
+		color #{$dur}s 0.0s;
+	&:hover {
+		cursor: pointer;
+		color: var(--color-highlight);
+		&::before,
+		&::after {
+			background-color: var(--color-highlight);
+		}
+	}
+	&::before,
+	&::after {
+		background-color: var(--white);
+		transition:
+			background-color #{$dur}s 0.0s,
+			transform #{$dur}s 0.0s;
+	}
+}
+
+
+.menu-item.current-menu-item a, 
+.menu-item.current-page-item a, 
+.menu-item a:focus, 
+.menu-item a:hover {
+  color: var(--color-highlight);
+}

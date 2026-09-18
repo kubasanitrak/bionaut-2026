@@ -1,0 +1,644 @@
+{
+    "key": "group_bio26_projekt",
+    "title": "Projekt",
+    "fields": [
+        {
+            "key": "field_bio26_featured",
+            "label": "Zobrazit na homepagi",
+            "name": "featured",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Vypíchnout projekt na homepagi. Legacy: _settings_featured",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "ui": 1
+        },
+        {
+            "key": "field_bio26_featured_order",
+            "label": "Pořadí na homepagi",
+            "name": "featured_order",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "min": 0,
+            "step": 1
+        },
+        {
+            "key": "field_bio26_featured_badge",
+            "label": "Badge na homepagi",
+            "name": "featured_badge",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Optional award overlay on the homepage card. Replaces hardcoded post-ID badges.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all"
+        },
+        {
+            "key": "field_bio26_website",
+            "label": "Webové stránky projektu",
+            "name": "website",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_bio26_eshop",
+            "label": "Eshop",
+            "name": "eshop",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_bio26_client",
+            "label": "Jméno klienta",
+            "name": "client_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_bio26_prizes",
+            "label": "Vavříny",
+            "name": "prizes",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Laurel / awards image. Legacy: _settings_prizes",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_bio26_horizontal_icons",
+            "label": "Zobrazit ikony pod textem",
+            "name": "horizontal_icons",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "ui": 1
+        },
+        {
+            "key": "field_bio26_icons",
+            "label": "Ikony",
+            "name": "icons",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add icon",
+            "sub_fields": [
+                {
+                    "key": "field_bio26_icon",
+                    "label": "Ikona",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "preview_size": "thumbnail",
+                    "parent_repeater": "field_bio26_icons"
+                }
+            ]
+        },
+        {
+            "key": "field_bio26_trailer_service",
+            "label": "Trailer service",
+            "name": "trailer_service",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Host for simple trailer IDs. Default YouTube. Replaces the hardcoded post-ID YouTube/Vimeo switch.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "youtube": "YouTube",
+                "vimeo": "Vimeo"
+            },
+            "default_value": "youtube",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 1
+        },
+        {
+            "key": "field_bio26_trailers",
+            "label": "Trailery",
+            "name": "trailers",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Video IDs only. Legacy: _video_trailer",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add trailer",
+            "sub_fields": [
+                {
+                    "key": "field_bio26_trailer_id",
+                    "label": "Video ID",
+                    "name": "trailer_id",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "YouTube or Vimeo ID only, not the full URL.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_bio26_trailers"
+                }
+            ]
+        },
+        {
+            "key": "field_bio26_show_cinema",
+            "label": "Zobrazit kino projekce",
+            "name": "show_cinema_listings",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Loads the disfilm cinema listing. Replaces hardcoded IDs 2947 / 2949.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "ui": 1
+        },
+        {
+            "key": "field_bio26_hide_gallery",
+            "label": "Skrýt galerii stillů",
+            "name": "hide_attached_gallery",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Do not list attached images as stills. Replaces hardcoded IDs 334 / 341 / 501.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "ui": 1
+        },
+        {
+            "key": "field_bio26_credits",
+            "label": "Credits",
+            "name": "credits_html",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_bio26_cast",
+            "label": "Cast",
+            "name": "cast_html",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_bio26_press_files",
+            "label": "Press soubory",
+            "name": "press_files",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "button_label": "Add file",
+            "sub_fields": [
+                {
+                    "key": "field_bio26_press_file",
+                    "label": "Soubor",
+                    "name": "file",
+                    "aria-label": "",
+                    "type": "file",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "parent_repeater": "field_bio26_press_files"
+                }
+            ]
+        },
+        {
+            "key": "field_bio26_press_dropbox",
+            "label": "Odkaz na dropbox",
+            "name": "press_dropbox",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": ""
+        },
+        {
+            "key": "field_bio26_bg_mp4",
+            "label": "Video na pozadí MP4",
+            "name": "bgvideo_mp4",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "mime_types": "mp4"
+        },
+        {
+            "key": "field_bio26_bg_webm",
+            "label": "Video na pozadí WEBM",
+            "name": "bgvideo_webm",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "mime_types": "webm"
+        },
+        {
+            "key": "field_bio26_bg_ogv",
+            "label": "Video na pozadí OGV",
+            "name": "bgvideo_ogv",
+            "aria-label": "",
+            "type": "file",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "mime_types": "ogv"
+        },
+        {
+            "key": "field_bio26_playlist",
+            "label": "Playlist",
+            "name": "playlist",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Add video",
+            "sub_fields": [
+                {
+                    "key": "field_bio26_pl_title",
+                    "label": "Název videa",
+                    "name": "video_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "parent_repeater": "field_bio26_playlist"
+                },
+                {
+                    "key": "field_bio26_pl_link",
+                    "label": "Odkaz",
+                    "name": "video_link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "parent_repeater": "field_bio26_playlist"
+                },
+                {
+                    "key": "field_bio26_pl_image",
+                    "label": "Náhledový obrázek",
+                    "name": "video_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_bio26_playlist"
+                }
+            ]
+        },
+        {
+            "key": "field_bio26_complex_playlist",
+            "label": "Playlist s textem",
+            "name": "complex_playlist",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "button_label": "Add video",
+            "sub_fields": [
+                {
+                    "key": "field_bio26_cpl_title",
+                    "label": "Název videa",
+                    "name": "video_title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "parent_repeater": "field_bio26_complex_playlist"
+                },
+                {
+                    "key": "field_bio26_cpl_desc",
+                    "label": "Text k videu",
+                    "name": "video_description",
+                    "aria-label": "",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "tabs": "all",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 0,
+                    "parent_repeater": "field_bio26_complex_playlist"
+                },
+                {
+                    "key": "field_bio26_cpl_link",
+                    "label": "Odkaz",
+                    "name": "video_link",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "parent_repeater": "field_bio26_complex_playlist"
+                },
+                {
+                    "key": "field_bio26_cpl_image",
+                    "label": "Náhledový obrázek",
+                    "name": "video_image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "parent_repeater": "field_bio26_complex_playlist"
+                },
+                {
+                    "key": "field_bio26_cpl_date",
+                    "label": "Release date",
+                    "name": "video_release_date",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "parent_repeater": "field_bio26_complex_playlist"
+                },
+                {
+                    "key": "field_bio26_cpl_service",
+                    "label": "Server",
+                    "name": "video_service",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "youtube": "YouTube",
+                        "vimeo": "Vimeo",
+                        "none": "Image only"
+                    },
+                    "default_value": "youtube",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "ui": 1,
+                    "parent_repeater": "field_bio26_complex_playlist"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "projekt"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Frozen projekt model for Bionaut 2026. Legacy Cuztom keys remain readable until Phase 3 migration.",
+    "show_in_rest": 0,
+    "modified": 1757610000
+}

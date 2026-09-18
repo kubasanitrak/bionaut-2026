@@ -1,0 +1,70 @@
+.SaMlogoline {
+  display: flex;
+  flex-wrap: wrap;
+	padding: 4rem 0 2rem;
+}
+  @media screen and (orientation: landscape) {
+
+.SaMlogoline .project__icon-img {
+  width: 100% !important;
+  object-fit: contain;
+}
+
+.SaMlogoline.desktop-nowrap{
+  flex-wrap: nowrap !important;
+}
+  
+}
+
+.SaMlogoline .project__icon {
+  height: 6rem;
+  max-height: 6rem;
+  overflow: hidden;
+	margin: 0 2rem 1rem 0;
+}
+
+.SaMlogoline .project__icon-img {
+  height: 100%;
+  width: auto !important;
+  max-width: auto !important;
+  max-height: 100%;
+}
+
+.SaMlogoline p {
+  flex: 10 20 100%;
+}
+.screening-label {
+	margin-right: 3rem;
+}
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+.flex-col {
+	flex: 0 0 calc(50% - 2rem);
+}
+.logline {
+	line-height: 1.1em;
+	margin-bottom: 1.5rem;
+}
+
+/* COOKIE CONSENT */
+
+@media screen and (orientation: portrait) { .cmplz-cookiebanner .cmplz-buttons { flex-wrap: nowrap !important; } }
+
+.cmplz-cookiebanner .cmplz-categories .cmplz-category .cmplz-category-header .cmplz-banner-checkbox,
+.cmplz-cookiebanner .cmplz-categories .cmplz-category .cmplz-category-header .cmplz-always-active{
+  grid-column-start: 2;
+}
+
+/* FLOWPAPER PDF VIEWER */
+#flowpaper-logo-bottom {
+  display: none !important;
+  visibility: hidden;
+}
+
+.entry-content--wide {
+  min-height: 85vh;
+}

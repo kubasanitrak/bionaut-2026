@@ -1,0 +1,256 @@
+{
+    "key": "group_bio26_block_featured",
+    "title": "Block: Featured projects",
+    "fields": [
+        {
+            "key": "field_bio26_mosaic_rows",
+            "label": "Řádky mozaiky",
+            "name": "mosaic_rows",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "Každý řádek má 3 sloupce na desktopu. Dvojitá dlaždice zabírá dva sloupce; zbývající sloupec stohuje dvě jednotlivé. Dvě dvojité v jednom řádku nejsou možné. Pořadí řádků = pořadí na homepagi.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "layout_bio26_three_singles": {
+                    "key": "layout_bio26_three_singles",
+                    "name": "three_singles",
+                    "label": "3 dlaždice",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_bio26_tile_left",
+                            "label": "Vlevo",
+                            "name": "left",
+                            "aria-label": "",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "projekt"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "return_format": "id",
+                            "multiple": 0,
+                            "allow_null": 1,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": []
+                        },
+                        {
+                            "key": "field_bio26_tile_middle",
+                            "label": "Uprostřed",
+                            "name": "middle",
+                            "aria-label": "",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "34",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "projekt"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "return_format": "id",
+                            "multiple": 0,
+                            "allow_null": 1,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": []
+                        },
+                        {
+                            "key": "field_bio26_tile_right",
+                            "label": "Vpravo",
+                            "name": "right",
+                            "aria-label": "",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "33",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "projekt"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "return_format": "id",
+                            "multiple": 0,
+                            "allow_null": 1,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": []
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_bio26_double_stack": {
+                    "key": "layout_bio26_double_stack",
+                    "name": "double_stack",
+                    "label": "Dvojitá + stoh",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_bio26_double_position",
+                            "label": "Pozice dvojité",
+                            "name": "double_position",
+                            "aria-label": "",
+                            "type": "button_group",
+                            "instructions": "Dvojitá dlaždice vlevo nebo vpravo; stoh dvou jednotlivců vyplní zbývající sloupec.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "left": "Vlevo",
+                                "right": "Vpravo"
+                            },
+                            "default_value": "left",
+                            "return_format": "value",
+                            "allow_null": 0,
+                            "layout": "horizontal"
+                        },
+                        {
+                            "key": "field_bio26_tile_double",
+                            "label": "Dvojitá dlaždice",
+                            "name": "double",
+                            "aria-label": "",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "100",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "projekt"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "return_format": "id",
+                            "multiple": 0,
+                            "allow_null": 1,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": []
+                        },
+                        {
+                            "key": "field_bio26_tile_stack_1",
+                            "label": "Stoh nahoře",
+                            "name": "stack_1",
+                            "aria-label": "",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "projekt"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "return_format": "id",
+                            "multiple": 0,
+                            "allow_null": 1,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": []
+                        },
+                        {
+                            "key": "field_bio26_tile_stack_2",
+                            "label": "Stoh dole",
+                            "name": "stack_2",
+                            "aria-label": "",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "projekt"
+                            ],
+                            "post_status": [
+                                "publish"
+                            ],
+                            "taxonomy": "",
+                            "return_format": "id",
+                            "multiple": 0,
+                            "allow_null": 1,
+                            "bidirectional": 0,
+                            "ui": 1,
+                            "bidirectional_target": []
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Přidat řádek"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/bio-featured-projects"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Homepage mosaic rows for the Featured projects block.",
+    "show_in_rest": 0,
+    "modified": 1758132420
+}

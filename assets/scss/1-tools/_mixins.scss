@@ -1,0 +1,137 @@
+@mixin transition($what:all, $period:0.25s, $ease: ease) {
+	-webkit-transition: $what $period $ease;
+	-moz-transition: $what $period $ease;
+	-ms-transition: $what $period $ease;
+	-o-transition: $what $period $ease;
+	transition: $what $period $ease;
+}
+
+@mixin mq($point) {
+	@if $point == mq-XL {
+		@media screen and (min-width: 90.1rem) { @content; }
+	}
+	@else if $point == mq-S {
+		@media screen and (max-width: 40rem)  { @content; }
+	}
+	@else if $point == mq-land {
+		@media screen and (orientation: landscape)  { @content; }
+	}
+	@else if $point == mq-portr {
+		@media screen and (orientation: portrait)  { @content; }
+	}
+	@else if $point == mq-M-UP {
+		@media screen and (min-width: 40.1rem)  { @content; }
+	}
+	@else if $point == mq-land-M-UP {
+		@media screen and (orientation: landscape) and (min-width: 40.1rem)  { @content; }
+	}
+	@else if $point == mq-portr-M-UP {
+		@media screen and (orientation: portrait) and (min-width: 30.1rem)  { @content; }
+	}
+	@else if $point == mq-L-UP {
+		@media screen and (min-width: 52.1rem)  { @content; }
+	}
+	@else if $point == mq-XL-UP {
+		@media screen and (min-width: 100.1rem)  { @content; }
+	}
+	@else if $point == mq-land-L-UP {
+		@media screen and (orientation: landscape) and (min-width: 51.1rem)  { @content; }
+	}
+	@else if $point == mq-portr-L-UP {
+		@media screen and (orientation: portrait) and (min-width: 51.1rem)  { @content; }
+	}
+	@else if $point == mq-UW-UP {
+		@media screen and (min-aspect-ratio: 2/1)  { @content; }
+	}
+	@else if $point == mq-BREAK-P {
+		@media screen and (orientation: landscape) and (min-width: $Break-P)  { @content; }
+	}
+	@else if $point == mq-iPad-land {
+		@media only screen and (min-device-width: 810px) and (max-device-width: 1080px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {  @content; }
+	}
+	@else if $point == mq-iPad-port {
+		@media only screen and (min-device-width: 810px) and (max-device-width: 1080px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {  @content; }
+	}
+	@else if $point == mq-iP-land {
+		@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {  @content; }
+	}
+	@else if $point == mq-iPX-land {
+		@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {  @content; }
+	}
+	@else if $point == mq-iP-port {
+		@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) { @content; }
+	}
+	@else if $point == mq-BREAK-pmaw {
+		@media screen and (orientation: landscape) and (min-width: $p-max-W * 2.5)  { @content; }
+	}
+}
+
+@mixin flexbox() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+@mixin flex($values) {
+	-webkit-box-flex: $values;
+	-moz-box-flex:  $values;
+	-webkit-flex:  $values;
+	-ms-flex:  $values;
+	flex:  $values;
+}
+
+@mixin order($val) {
+	-webkit-box-ordinal-group: $val;  
+	-moz-box-ordinal-group: $val;     
+	-ms-flex-order: $val;     
+	-webkit-order: $val;  
+	order: $val;
+}
+@mixin bgc-offset($n, $color) {
+	@for $i from 1 through $n {
+		&:nth-child(#{$i}) {
+			background-color: darken($color, 0% + ($i * 2));
+		}
+	}
+}
+@mixin uni-offset($n, $y, $prop, $timing:0.5, $offset: 0.25) {
+	@for $i from 1 through $n {
+		&:nth-child(#{$i}) {
+			$sum: $i * $offset;
+			transition: $prop #{$timing}s #{$sum + $y}s ease-out;
+		}
+	}
+}
+
+@mixin dbg() {
+	*:not(path):not(g) {
+		// color:                    hsla(210, 100%, 100%, 0.9) !important;
+		// background:               hsla(210, 100%,  50%, 0.5) !important;
+		outline:    solid 0.01rem hsla(325, 100%, 50%, 0.95) !important;
+		box-shadow: none !important;
+	}
+}
+@mixin css-paralax($children:1, $duration: 0.5, $offset: 0.25, $startdelay: 0) {
+	$ease: cubic-bezier(.41,1.1,1,1); // ease-out
+	// $ease: cubic-bezier(.17,.67,.83,.67);
+	@for $a from 1 through $children {
+		&:nth-child(#{$a}) {
+			$delay: $startdelay + ($a * $offset);
+			transition: opacity #{$duration}s #{$delay}s ease-out, transform #{$duration + $offset}s #{$delay}s $ease;
+		}
+	}
+}
+@mixin intro-offset($n, $y, $prop, $timing:0.35, $offset: 0.15, $pseudosel: '::before', $pseudoprop: opacity) {
+	@for $i from 1 through $n {
+		&:nth-child(#{$i}) {
+			$sum: $i * $offset;
+			transition: $prop #{$timing}s #{$sum + $y}s ease-out;
+			&#{$pseudosel} {
+				// transition: $pseudoprop #{$timing}s #{$timing + $sum + $y}s ease-out;
+				transition: $pseudoprop #{$timing}s #{1.1 * ($sum + $y)}s ease-out;
+			}
+		}
+	}
+}

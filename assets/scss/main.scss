@@ -1,0 +1,29 @@
+@import '1-settings/colors';
+@import '1-settings/vars';
+@import '1-tools/mixins';
+@import 'fonts';
+@import 'legacy';
+
+@import '5-components/01-header';
+@import '5-components/03.01-menu';
+@import '5-components/03.02-hamburger';
+@import '5-components/05-wp-customizer';
+@import '5-components/06-footer';
+@import '5-components/08-news';
+@import '5-components/09-lide';
+@import '5-components/10-awards';
+@import '5-components/11-projects';
+@import '5-components/12-spark';
+@import '5-components/13-hp-mosaic';
+@import '5-components/00-css3-transforms';
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+	}
+}
+
+.taC {
+	text-align: center;
+}

@@ -1,0 +1,19 @@
+@font-face {
+	font-family: 'dha-Bold';
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url('../fonts/dhaSans-Bold.woff') format('woff'),
+		url('../fonts/dhaSans-Bold.woff2') format('woff2');
+	font-named-instance: 'Bold';
+}
+
+@font-face {
+	font-family: 'dha-Reg';
+	font-style: normal;
+	font-weight: 100 900;
+	font-display: swap;
+	src: url('../fonts/dhaSans-Regular.woff') format('woff'),
+		url('../fonts/dhaSans-Regular.woff2') format('woff2');
+	font-named-instance: 'Regular';
+}
