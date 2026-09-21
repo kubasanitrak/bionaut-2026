@@ -16,6 +16,15 @@
 		@include mq(mq-land) {
 			flex-basis: calc(100% / 3);
 		}
+		& + .news-grid--item {
+			margin-block-start: 12px;
+			@include mq(mq-land) {
+				margin-block-start: 0;
+			}
+			@include mq(mq-portr-L-UP) {
+				margin-block-start: 0;
+			}
+		}
 
 		&_thumb {
 			width: 100%;

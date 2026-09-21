@@ -34,6 +34,7 @@ function bio_register_blocks() {
 			'description'     => __( 'Homepage featured project mosaic.', 'bionaut' ),
 			'render_template' => 'parts/block-featured-projects.php',
 			'icon'            => 'star-filled',
+			'mode'            => 'edit',
 		),
 		array(
 			'name'            => 'bio-projects-archive',
@@ -93,23 +94,20 @@ function bio_register_blocks() {
 		),
 	);
 
+	$defaults = array(
+		'category'       => 'bionaut',
+		'mode'           => 'preview',
+		'supports'       => array(
+			'align'  => false,
+			'anchor' => true,
+			'mode'   => true,
+		),
+		'enqueue_assets' => '',
+		'keywords'       => array( 'bionaut' ),
+	);
+
 	foreach ( $blocks as $block ) {
-		acf_register_block_type(
-			array_merge(
-				$block,
-				array(
-					'category'        => 'bionaut',
-					'mode'            => 'preview',
-					'supports'        => array(
-						'align'  => false,
-						'anchor' => true,
-						'mode'   => true,
-					),
-					'enqueue_assets'  => '',
-					'keywords'        => array( 'bionaut' ),
-				)
-			)
-		);
+		acf_register_block_type( array_merge( $defaults, $block ) );
 	}
 }
 

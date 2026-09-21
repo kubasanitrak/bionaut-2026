@@ -2,7 +2,7 @@
 	--pad-T: calc(44px + (28 - 44) * ((100vw - 320px) / (2560 - 320)));
 	--pad-R: calc(10px + (30 - 10) * ((100vw - 320px) / (2560 - 320)));
 	--touch-S: 28px;
-	--header-H: calc(72px + (174 - 72) * ((100vw - 320px) / (2560 - 320)));
+	--header-H: calc(124px + (174 - 124) * ((100vw - 320px) / (2560 - 320)));
 	--gap: calc(9px + (6 - 9) * ((100vw - 320px) / (2560 - 320)));
 
 	@media (pointer: coarse) {
@@ -16,6 +16,7 @@ $base-T: 0.65;
 
 $fz-H1: calc(30px + (52 - 30) * ((100vw - 320px) / (2560 - 320)));
 $fz-H2: calc(20px + (30 - 20) * ((100vw - 320px) / (2560 - 320)));
+$fz-NAV: calc(28px + (22 - 28) * ((100vw - 320px) / (2560 - 320)));
 $fz-CONTACT: calc(13px + (14 - 13) * ((100vw - 320px) / (2560 - 320)));
 
 $ham-W: 60px;
@@ -24,4 +25,6 @@ $ham-H: 60px;
 $plus-STROKE: 2px;
 $plus-SIZE: 20px;
 
-$max-W: 1200px;
+$max-W: 1280px;
+// $max-W: 80rem;
+$Break-P: calc(#{$max-W} + var(--pad-R)); //1080px

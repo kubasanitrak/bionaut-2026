@@ -5,8 +5,17 @@
  * @package bionaut
  */
 
-$post_id = get_the_ID();
-if ( ! function_exists( 'have_rows' ) || ! have_rows( 'personel_sections_container', $post_id ) ) {
+if ( empty( $post_id ) || ! is_numeric( $post_id ) ) {
+	if ( ! empty( $block['context']['postId'] ) ) {
+		$post_id = (int) $block['context']['postId'];
+	} else {
+		$post_id = (int) get_the_ID();
+	}
+} else {
+	$post_id = (int) $post_id;
+}
+
+if ( $post_id < 1 || ! function_exists( 'have_rows' ) || ! have_rows( 'personel_sections_container', $post_id ) ) {
 	return;
 }
 ?>
@@ -59,7 +68,7 @@ if ( ! function_exists( 'have_rows' ) || ! have_rows( 'personel_sections_contain
 								<?php
 								echo wp_get_attachment_image(
 									(int) $img['ID'],
-									'bio-contact-thumb',
+									'full',
 									false,
 									array(
 										'alt'      => get_the_title( $person_id ),

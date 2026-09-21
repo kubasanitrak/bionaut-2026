@@ -9,10 +9,9 @@ if ( bio_hide_attached_gallery() ) {
 	return;
 }
 
-$orig_id    = bio_original_id();
-$prizes_url = bio_project_field( 'prizes' );
-$icons      = bio_project_icons();
-$images     = get_children(
+$orig_id         = bio_original_id();
+$gallery_exclude = bio_gallery_exclude_urls();
+$images          = get_children(
 	array(
 		'post_parent'    => $orig_id,
 		'post_type'      => 'attachment',
@@ -36,10 +35,7 @@ if ( ! $images ) {
 			if ( empty( $image_big_url[0] ) ) {
 				continue;
 			}
-			if ( $prizes_url && $image_big_url[0] === $prizes_url ) {
-				continue;
-			}
-			if ( in_array( $image_big_url[0], $icons, true ) ) {
+			if ( in_array( $image_big_url[0], $gallery_exclude, true ) ) {
 				continue;
 			}
 			?>

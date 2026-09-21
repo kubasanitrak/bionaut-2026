@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 function bio_hp_mosaic_block_markup() {
-	return "<!-- wp:acf/bio-featured-projects {\"name\":\"acf/bio-featured-projects\",\"mode\":\"preview\"} /-->\n";
+	return "<!-- wp:acf/bio-featured-projects {\"name\":\"acf/bio-featured-projects\",\"mode\":\"edit\"} /-->\n";
 }
 
 /**
@@ -169,4 +169,36 @@ function bio_maybe_migrate_hp_mosaic_pages() {
 	if ( ! get_option( 'bio_hp_mosaic_pll' ) ) {
 		bio_hp_mosaic_enable_lang_front();
 	}
+	if ( ! get_option( 'bio_hp_mosaic_block_edit_mode' ) ) {
+		bio_hp_mosaic_switch_block_to_edit_mode();
+	}
+}
+
+/**
+ * Saved homepage blocks used preview mode; tile links swallowed Gutenberg clicks.
+ */
+function bio_hp_mosaic_switch_block_to_edit_mode() {
+	$log = get_option( 'bio_hp_mosaic_pages_log', array() );
+	$ids = array_filter( array( (int) ( $log['cs'] ?? 0 ), (int) ( $log['en'] ?? 0 ) ) );
+
+	foreach ( $ids as $id ) {
+		$post = get_post( $id );
+		if ( ! $post instanceof WP_Post ) {
+			continue;
+		}
+		if ( false === strpos( $post->post_content, 'acf/bio-featured-projects' ) ) {
+			continue;
+		}
+		if ( false === strpos( $post->post_content, '"mode":"preview"' ) ) {
+			continue;
+		}
+		wp_update_post(
+			array(
+				'ID'           => $id,
+				'post_content' => str_replace( '"mode":"preview"', '"mode":"edit"', $post->post_content ),
+			)
+		);
+	}
+
+	update_option( 'bio_hp_mosaic_block_edit_mode', 1, false );
 }

@@ -15,6 +15,7 @@ require get_template_directory() . '/inc/setup.php';
 require get_template_directory() . '/inc/i18n.php';
 require get_template_directory() . '/inc/cpt.php';
 require get_template_directory() . '/inc/meta.php';
+require get_template_directory() . '/inc/login.php';
 require get_template_directory() . '/inc/queries.php';
 require get_template_directory() . '/inc/blocks.php';
 require get_template_directory() . '/inc/rewrites.php';

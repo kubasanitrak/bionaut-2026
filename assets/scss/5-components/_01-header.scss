@@ -2,10 +2,16 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%;
-	max-width: 100%;
+	// width: 100vw;
+	// max-width: 100%;
+	// width: 100%;
+	@include mq(mq-land) {
+	}
+	@include mq(mq-BREAK-P) {
+		left: calc((100vw - #{$max-W}) * .5);
+	}
 	z-index: 100;
-	padding: 0;
+	// padding: 0;
 	background-color: transparent;
 	transform: translate3d(0, 0, 0);
 	transition: transform $global-transistion-duration ease-out;
@@ -16,9 +22,15 @@
 		align-items: center;
 		position: relative;
 		min-height: var(--header-H);
+		// padding-block: 1.5rem 0.75rem;
 		padding-block: 0.75rem;
 		box-sizing: border-box;
-		padding-inline: 0;
+		// width: 100%;
+		// padding-left: 5%;
+		@include mq(mq-land) {
+			// width: initial;
+			// padding-inline: 0;
+		}
 	}
 
 	.logo {
@@ -40,7 +52,7 @@
 			display: block;
 			width: auto;
 			height: auto;
-			max-height: 52px;
+			max-height: 72px;
 			max-width: calc(min(158px, 48vw));
 
 			@include mq(mq-land) {

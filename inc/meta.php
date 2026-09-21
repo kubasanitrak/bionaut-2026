@@ -253,6 +253,47 @@ function bio_project_icons( $post_id = null ) {
 	return $urls;
 }
 
+/**
+ * Prize image URL from ACF (array) or legacy Cuztom (string).
+ *
+ * @param int|null $post_id Post ID.
+ * @return string
+ */
+function bio_project_prizes_url( $post_id = null ) {
+	$prizes = bio_project_field( 'prizes', $post_id );
+	if ( is_array( $prizes ) ) {
+		return isset( $prizes['url'] ) ? (string) $prizes['url'] : '';
+	}
+	return is_string( $prizes ) ? $prizes : '';
+}
+
+/**
+ * Prize and partner-logo URLs to keep out of the stills gallery.
+ * Includes the Czech original so language-specific posters do not leak across translations.
+ *
+ * @param int|null $post_id Post ID.
+ * @return string[]
+ */
+function bio_gallery_exclude_urls( $post_id = null ) {
+	$post_id = $post_id ? (int) $post_id : (int) get_the_ID();
+	$ids     = array( $post_id, bio_original_id( $post_id ) );
+	$urls    = array();
+
+	foreach ( array_unique( array_filter( $ids ) ) as $id ) {
+		$prizes = bio_project_prizes_url( $id );
+		if ( $prizes ) {
+			$urls[] = $prizes;
+		}
+		foreach ( bio_project_icons( $id ) as $icon ) {
+			if ( $icon ) {
+				$urls[] = $icon;
+			}
+		}
+	}
+
+	return array_values( array_unique( $urls ) );
+}
+
 add_filter( 'acf/load_value/name=trailer_service', 'bio_acf_load_trailer_service', 10, 2 );
 function bio_acf_load_trailer_service( $value, $post_id ) {
 	if ( in_array( $value, array( 'youtube', 'vimeo' ), true ) ) {

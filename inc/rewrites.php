@@ -52,9 +52,13 @@ function bio_remove_cpt_slug( $post_link, $post ) {
 	return str_replace( '/' . $post->post_type . '/', '/', $post_link );
 }
 
-add_action( 'parse_query', 'bio_prefer_language_page', 5 );
-function bio_prefer_language_page( $query ) {
+add_action( 'parse_query', 'bio_prefer_language_singular', 5 );
+function bio_prefer_language_singular( $query ) {
 	if ( is_admin() || ! $query->is_main_query() || ! function_exists( 'pll_current_language' ) ) {
+		return;
+	}
+
+	if ( $query->get( 'page_id' ) || $query->get( 'p' ) ) {
 		return;
 	}
 
@@ -72,23 +76,40 @@ function bio_prefer_language_page( $query ) {
 		return;
 	}
 
-	$pages = get_posts(
+	$posts = get_posts(
 		array(
 			'name'             => $slug,
-			'post_type'        => 'page',
+			'post_type'        => array( 'page', 'projekt', 'person', 'newsitem', 'post' ),
 			'post_status'      => 'publish',
 			'posts_per_page'   => 20,
 			'suppress_filters' => true,
+			'lang'             => 'cs,en',
+			'no_found_rows'    => true,
 		)
 	);
-	foreach ( $pages as $page ) {
-		if ( pll_get_post_language( $page->ID ) === $lang ) {
-			$query->set( 'page_id', (int) $page->ID );
-			$query->set( 'pagename', '' );
-			$query->set( 'name', '' );
-			$query->set( 'page', '' );
+
+	$match = null;
+	foreach ( $posts as $post ) {
+		if ( function_exists( 'pll_get_post_language' ) && pll_get_post_language( $post->ID ) === $lang ) {
+			$match = $post;
 			break;
 		}
+	}
+	if ( ! $match ) {
+		return;
+	}
+
+	$query->set( 'post_type', $match->post_type );
+	$query->set( 'pagename', '' );
+	$query->set( 'name', '' );
+	$query->set( 'page', '' );
+
+	if ( 'page' === $match->post_type ) {
+		$query->set( 'page_id', (int) $match->ID );
+		$query->set( 'p', 0 );
+	} else {
+		$query->set( 'p', (int) $match->ID );
+		$query->set( 'page_id', 0 );
 	}
 }
 
@@ -122,7 +143,7 @@ function bio_parse_request_cpt_slug( $query ) {
 		return;
 	}
 
-	if ( $query->get( 'page_id' ) ) {
+	if ( $query->get( 'page_id' ) || $query->get( 'p' ) ) {
 		return;
 	}
 

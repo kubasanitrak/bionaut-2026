@@ -1,6 +1,7 @@
 <?php
 /**
- * Local performance cleanup: heavy plugins, dead cron, lighter front assets.
+ * Local performance cleanup: keep Wordfence/Super Cache/Classic Editor off,
+ * clear dead cron, lighter front assets.
  *
  * @package bionaut
  */
@@ -22,7 +23,6 @@ function bio_performance_cleanup() {
 	$local_off = array(
 		'wordfence/wordfence.php',
 		'wp-super-cache/wp-cache.php',
-		'duplicator-pro/duplicator-pro.php',
 		'classic-editor/classic-editor.php',
 	);
 	foreach ( $local_off as $plugin ) {

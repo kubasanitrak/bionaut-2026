@@ -46,6 +46,22 @@ function bio_enqueue_assets() {
 	}
 }
 
+add_action( 'enqueue_block_assets', 'bio_enqueue_editor_mosaic_css' );
+function bio_enqueue_editor_mosaic_css() {
+	if ( ! is_admin() ) {
+		return;
+	}
+
+	wp_register_style( 'bionaut-editor-mosaic', false, array(), BIO_THEME_VERSION );
+	wp_enqueue_style( 'bionaut-editor-mosaic' );
+	wp_add_inline_style(
+		'bionaut-editor-mosaic',
+		'.hp-mosaic--editor{position:relative;min-height:8rem}'
+		. '.hp-mosaic__editor-shield{display:block;position:absolute;inset:0;z-index:20;cursor:pointer}'
+		. '.hp-mosaic--editor a,.hp-mosaic--editor .hp-tile{pointer-events:none}'
+	);
+}
+
 /**
  * Whether stills gallery markup (and LiteLight) should load on this request.
  */

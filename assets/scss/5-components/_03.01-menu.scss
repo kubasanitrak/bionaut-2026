@@ -119,6 +119,7 @@
 
 .site-header .menu-item a,
 .lang-switcher li a {
+	/*
 	font-size: 28px;
 
 	@include mq(mq-land) {
@@ -136,6 +137,8 @@
 			font-size: 25px;
 		}
 	}
+	*/
+	font-size: $fz-NAV;
 }
 
 .menu-item.current-menu-item a,

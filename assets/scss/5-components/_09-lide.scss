@@ -38,7 +38,10 @@
 	}
 
 	@include mq(mq-land) {
-		flex: 0 0 calc((#{$max-W} - (var(--gap) * 4.01)) / 5 * var(--colscount) + var(--gap) * (var(--colscount) - 1));
+		flex: 0 0 calc((100vw - (var(--gap) * 4.01) - (var(--pad-R) * 4)) / 5 * var(--colscount) + var(--gap) * (var(--colscount) - 1));
+	}
+	@include mq(mq-BREAK-P) {
+		flex: 0 0 calc((#{$max-W} - (var(--gap) * 4.01)  - (var(--pad-R) * 4)) / 5 * var(--colscount) + var(--gap) * (var(--colscount) - 1));
 	}
 
 	&--title {
@@ -78,7 +81,10 @@
 		justify-content: space-between;
 
 		@include mq(mq-land) {
-			flex: 0 0 calc((#{$max-W} - (var(--gap) * 4)) / 5);
+			flex: 0 0 calc((100vw - (var(--gap) * 4) - (var(--pad-R) * 4)) / 5);
+		}
+		@include mq(mq-BREAK-P) {
+			flex: 0 0 calc((#{$max-W} - (var(--gap) * 4)  - (var(--pad-R) * 4)) / 5);
 		}
 
 		&_title {
@@ -137,8 +143,10 @@
 			}
 
 			img {
+				display: block;
 				width: 100%;
 				max-width: 100%;
+				height: auto;
 			}
 		}
 

@@ -22,7 +22,8 @@ if ( is_singular() && bio_has_bg_video() ) {
 <script>document.body.classList.add('js');</script>
 <div id="page" class="hfeed site clear">
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-header__inner container">
+		<!-- <div class="site-header__inner container"> -->
+		<div class="site-header__inner ">
 			<a href="<?php echo esc_url( bio_home_url() ); ?>" class="logo logo--<?php echo esc_attr( sanitize_title( get_bloginfo( 'name', 'display' ) ) ); ?>" rel="home">
 				<?php
 				$logo = function_exists( 'get_field' ) ? get_field( 'bio_logo', 'option' ) : null;

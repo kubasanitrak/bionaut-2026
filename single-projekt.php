@@ -12,10 +12,8 @@ while ( have_posts() ) :
 
 	$orig_id          = bio_original_id();
 	$bg               = wp_get_attachment_image_src( get_post_thumbnail_id( $orig_id ), 'bio-background-img' );
-	$prizes_url       = bio_project_field( 'prizes' );
-	if ( is_array( $prizes_url ) ) {
-		$prizes_url = $prizes_url['url'] ?? '';
-	}
+	$prizes_url       = bio_project_prizes_url();
+	$gallery_exclude  = bio_gallery_exclude_urls();
 	$complex_playlist = bio_project_field( 'complex_playlist' );
 	$horizontal_icons = bio_project_field( 'horizontal_icons' );
 	$website          = bio_project_field( 'website' );
@@ -153,10 +151,7 @@ while ( have_posts() ) :
 										if ( empty( $image_big_url[0] ) ) {
 											continue;
 										}
-										if ( $prizes_url && $image_big_url[0] === $prizes_url ) {
-											continue;
-										}
-										if ( in_array( $image_big_url[0], $icons, true ) ) {
+										if ( in_array( $image_big_url[0], $gallery_exclude, true ) ) {
 											continue;
 										}
 										?>

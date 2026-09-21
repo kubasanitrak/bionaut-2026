@@ -5,8 +5,10 @@
  * @package bionaut
  */
 
-$rows = bio_mosaic_rows();
-if ( ! $rows ) {
+$is_preview = ! empty( $is_preview );
+$rows       = bio_mosaic_rows();
+
+if ( ! $rows && ! $is_preview ) {
 	return;
 }
 
@@ -37,9 +39,20 @@ $bio_render_tile = static function ( $post_id, $width, $position, &$index ) {
 	);
 	++$index;
 };
+$preview_capped = false;
+if ( $is_preview && count( $rows ) > 2 ) {
+	$rows           = array_slice( $rows, 0, 2 );
+	$preview_capped = true;
+}
 ?>
-<section class="section projects hp-mosaic">
+<section class="section projects hp-mosaic<?php echo $is_preview ? ' hp-mosaic--editor' : ''; ?>">
+	<?php if ( $is_preview ) : ?>
+		<div class="hp-mosaic__editor-shield" aria-hidden="true"></div>
+	<?php endif; ?>
 	<h1 class="visuallyhidden"><?php echo esc_html( bio_string( 'Projekty', 'Projects' ) ); ?></h1>
+	<?php if ( ! $rows ) : ?>
+		<p class="hp-mosaic__placeholder"><?php echo esc_html( bio_string( 'Přidejte řádky mozaiky v bočním panelu bloku.', 'Add mosaic rows in the block sidebar.' ) ); ?></p>
+	<?php endif; ?>
 	<?php foreach ( $rows as $row ) : ?>
 		<?php
 		$type = $row['type'] ?? '';
@@ -86,4 +99,7 @@ $bio_render_tile = static function ( $post_id, $width, $position, &$index ) {
 			</div>
 		<?php endif; ?>
 	<?php endforeach; ?>
+	<?php if ( $preview_capped ) : ?>
+		<p class="hp-mosaic__placeholder"><?php echo esc_html( bio_string( 'Náhled zkrácen — na webu se zobrazí všechny řádky.', 'Preview truncated — the front end shows every row.' ) ); ?></p>
+	<?php endif; ?>
 </section>
