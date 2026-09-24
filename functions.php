@@ -27,3 +27,4 @@ require get_template_directory() . '/inc/migrate-cuztom.php';
 require get_template_directory() . '/inc/migrate-wpml.php';
 require get_template_directory() . '/inc/migrate-phase6-pages.php';
 require get_template_directory() . '/inc/migrate-hp-mosaic.php';
+require get_template_directory() . '/inc/migrate-people-en.php';
