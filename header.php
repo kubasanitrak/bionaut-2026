@@ -35,10 +35,11 @@ if ( is_singular() && bio_has_bg_video() ) {
 				<?php endif; ?>
 			</a>
 
-			<button type="button" class="hamburger" id="menuBtnID" aria-expanded="false" aria-controls="site-header-menu">
+			<input type="checkbox" id="menuBtnID" class="nav-switch" aria-controls="site-header-menu">
+			<label for="menuBtnID" class="hamburger">
 				<span class="visuallyhidden"><?php echo esc_html( bio_string( 'Menu', 'Menu' ) ); ?></span>
 				<span class="hamburger__icon" aria-hidden="true"></span>
-			</button>
+			</label>
 
 			<div class="menu-container" id="site-header-menu">
 				<nav id="site-navigation" class="navigation-main" role="navigation">

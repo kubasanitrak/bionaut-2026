@@ -14,7 +14,6 @@
 	// padding: 0;
 	background-color: transparent;
 	transform: translate3d(0, 0, 0);
-	transition: transform $global-transistion-duration ease-out;
 	will-change: transform;
 
 	&__inner {
@@ -81,7 +80,7 @@
 	padding-top: calc(var(--header-H) + var(--pad-T));
 }
 
-body.nav-open {
+body:has(.nav-switch:checked) {
 	@include mq(mq-portr) {
 		overflow: hidden;
 	}

@@ -15,10 +15,9 @@
 	padding: 0;
 	background-color: #000;
 	box-sizing: border-box;
-	transition: height 0.5s ease, padding 0.5s ease;
 	pointer-events: none;
 
-	.site-header.is-open & {
+	.nav-switch:checked ~ & {
 		height: 100vh;
 		height: 100dvh;
 		padding-top: var(--header-H);
@@ -40,10 +39,9 @@
 		height: auto;
 		padding: 0;
 		background-color: transparent;
-		transition: none;
 		pointer-events: auto;
 
-		.site-header.is-open & {
+		.nav-switch:checked ~ & {
 			height: auto;
 			padding-top: 0;
 		}
@@ -146,6 +144,11 @@
 .menu-item a:focus,
 .menu-item a:hover {
 	color: var(--color-highlight);
+}
+
+.menu-item a:focus,
+.lang-switcher li a:focus {
+	outline: none;
 }
 
 .lang-switcher {

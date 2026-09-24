@@ -173,44 +173,36 @@
 			return window.matchMedia('(orientation: portrait)').matches;
 		}
 
-		function setMenuOpen(open) {
-			siteHeader.classList.toggle('is-open', open);
-			document.body.classList.toggle('nav-open', open);
+		function closeMenu() {
 			if (menuBtn) {
-				menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+				menuBtn.checked = false;
 			}
 		}
 
 		function toggleSiteHeader(hide) {
 			if (hide) {
 				siteHeader.classList.add('scrolled-OFF');
-				setMenuOpen(false);
+				closeMenu();
 			} else {
 				siteHeader.classList.remove('scrolled-OFF');
 			}
 		}
 
-		if (menuBtn) {
-			menuBtn.addEventListener('click', function () {
-				setMenuOpen(menuBtn.getAttribute('aria-expanded') !== 'true');
-			});
-		}
-
 		siteHeader.addEventListener('click', function (event) {
 			if (event.target.closest('.menu-container a')) {
-				setMenuOpen(false);
+				closeMenu();
 			}
 		});
 
 		document.addEventListener('keydown', function (event) {
 			if (event.key === 'Escape') {
-				setMenuOpen(false);
+				closeMenu();
 			}
 		});
 
 		window.addEventListener('resize', function () {
 			if (!isPortrait()) {
-				setMenuOpen(false);
+				closeMenu();
 			}
 		});
 
