@@ -78,7 +78,9 @@
 		flex: 0 0 calc((100% - (var(--gap) * 2)) / 2);
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		&:not(.flex-jc-fs) {
+			justify-content: space-between;
+		}
 
 		@include mq(mq-land) {
 			flex: 0 0 calc((100vw - (var(--gap) * 4) - (var(--pad-R) * 4)) / 5);

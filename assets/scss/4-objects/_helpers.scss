@@ -56,3 +56,15 @@
 .taC {
 	text-align: center;
 }
+.w-100 {
+	width: 100%;
+}
+
+.cols-w-2 {
+  --colscount: 2;
+  width: calc((1280px - (var(--gap) * 4.01) - (var(--pad-R) * 4)) / 5 * var(--colscount) + var(--gap) * (var(--colscount) - 1));
+}
+
+.flex-jc-fs {
+	justify-content: flex-start;
+}

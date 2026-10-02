@@ -1,0 +1,35 @@
+.page-about {
+	.site-content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		padding-bottom: calc(var(--pad-T) * 1);
+	}
+	&--col {
+		width: 100%;
+		max-width: 100%;
+		&_content {
+			@include mq(mq-land) {
+			  width: 40%;
+			}
+
+		}
+		&_ilu {
+			@include mq(mq-land) {
+				width: calc(60% - (var(--pad-R) * 2.0));
+				margin-top: calc(var(--pad-T) * -1);
+				// position: sticky;
+				// top: 0;
+			}
+		}
+	}
+}
+.planet-bionaut-container {
+
+}
+
+
+.clear-none::before, .clear-none::after {
+   content: none !important; 
+   display: none !important;
+}

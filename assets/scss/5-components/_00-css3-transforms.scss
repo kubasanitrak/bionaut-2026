@@ -6,8 +6,8 @@
 
 .menu-container {
 	transition:
-		height 0.5s ease,
-		padding 0.5s ease;
+		height 0.5s $global-transistion-duration ease,
+		padding 0.5s $global-transistion-duration ease;
 
 	@include mq(mq-land) {
 		transition: none;
@@ -32,11 +32,32 @@
 	}
 }
 
-.nav-switch:checked ~ .hamburger .hamburger__icon {
-	transition-delay: 0s;
+.navigation-main li,
+.lang-switcher__list li {
+	opacity: 0;
+	@include mq(mq-land) {
+		opacity: 1;
+	}
+	transition: opacity 0.0s $global-transistion-duration;
+}
+.nav-switch:checked {
+	~ .hamburger {
+		.hamburger__icon {
+			transition-delay: 0s;
 
-	&::before,
-	&::after {
-		transition-delay: 0s, $global-transistion-duration;
+			&::before,
+			&::after {
+				transition-delay: 0s, $global-transistion-duration;
+			}
+		}
+	}
+	~.menu-container {
+		transition-delay: 0.0s;
+		.navigation-main li,
+		.lang-switcher__list li {
+			opacity: 1;
+			transition-delay: $global-transistion-duration;
+		}
 	}
 }
+
