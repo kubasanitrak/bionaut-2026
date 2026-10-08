@@ -239,10 +239,29 @@
 		);
 	}
 
+	function initManageConsent() {
+		var trigger = document.getElementById('manageconsent');
+		if (!trigger) {
+			return;
+		}
+
+		trigger.addEventListener('click', function () {
+			var bannerId = window.complianz && complianz.user_banner_id;
+			var selector = bannerId
+				? '#cmplz-manage-consent button.cmplz-manage-consent.manage-consent-' + bannerId
+				: '#cmplz-manage-consent button.cmplz-manage-consent';
+			var manage = document.querySelector(selector);
+			if (manage) {
+				manage.click();
+			}
+		});
+	}
+
 	document.addEventListener('DOMContentLoaded', function () {
 		initBackground();
 		initCategoryToggles();
 		initNewsMore();
 		initSiteHeader();
+		initManageConsent();
 	});
 })();
