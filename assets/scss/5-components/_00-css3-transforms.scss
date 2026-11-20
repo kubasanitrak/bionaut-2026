@@ -15,20 +15,46 @@
 }
 
 .hamburger__icon {
-	transition: background-color 0s $global-transistion-duration;
+	transition: 
+		background-color 0s $global-transistion-duration;
 
 	&::before,
 	&::after {
-		transition-duration: $global-transistion-duration, $global-transistion-duration;
-		transition-delay: $global-transistion-duration, 0s;
+		transform-origin: center center;
+		transition-duration: 
+			450ms, // top || bottom
+			450ms, // transform
+			450ms,// width
+			450ms,// height
+			200ms,// border-radius
+			450ms;// left
+		transition-delay: 
+			450ms, // top || bottom
+			0s, // transform
+			200ms,// width
+			200ms,// height
+			200ms,// border-radius
+			200ms;// left
 	}
 
 	&::before {
-		transition-property: top, transform, width, height, border-radius, left;
+		transition-property: 
+			top, 
+			transform, 
+			width, 
+			height, 
+			border-radius, 
+			left;
 	}
 
 	&::after {
-		transition-property: bottom, transform, width, height, border-radius, left;
+		transition-property: 
+			bottom, 
+			transform, 
+			width, 
+			height, 
+			border-radius,
+			left;
 	}
 }
 
@@ -43,11 +69,17 @@
 .nav-switch:checked {
 	~ .hamburger {
 		.hamburger__icon {
-			transition-delay: 0s;
+			transition-delay: 0s; // background-color
 
 			&::before,
 			&::after {
-				transition-delay: 0s, $global-transistion-duration;
+				transition-delay: 
+					0s, // top || bottom
+					450ms, // transform
+					450ms,// width
+					450ms,// height
+					200ms,// border-radius
+					450ms;// left
 			}
 		}
 	}

@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'BIO_THEME_VERSION', '2026.1.0' );
+define( 'BIO_THEME_VERSION', '2026.2.0' );
 
 require get_template_directory() . '/inc/setup.php';
 require get_template_directory() . '/inc/i18n.php';

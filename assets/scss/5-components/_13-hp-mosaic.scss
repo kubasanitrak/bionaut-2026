@@ -238,7 +238,8 @@
 	}
 
 	.hp-tile .entry-title {
-		font-size: 40px;
+		// font-size: 40px;
+		font-size: calc(#{$fz-H2} * 1.25);
 	}
 }
 
